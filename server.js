@@ -2,10 +2,11 @@ const express = require('express');
 const server = express(); // to import express framework
 const weatherData = require('./data/weather.json');
 const cors = require('cors');
+require('dotenv').config();
 
 server.use(cors());// will allow anyone to send me req!
 
-const PORT = 3131; //my local IP address
+const PORT = process.env.PORT; //my local IP address
 
 //http:localhost:3131/
 server.get('/', (req, res) => {
